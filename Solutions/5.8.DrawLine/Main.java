@@ -11,9 +11,9 @@ public class Main
     public static void drawLine(byte screen[], int w, int x1, int x2, int y){
         if(x1==x2 || x1>w || x2>w)
             return;
-        int x1BytePos=x1/8;
+        int x1BytePos=x1/8+((w/8)*y);
         int x1BitPos=x1%8;
-        int x2BytePos=x2/8;
+        int x2BytePos=x2/8+((w/8)*y);
         int x2BitPos=x2%8;
         int mask=0xFF;
         int temp;
